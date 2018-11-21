@@ -8,6 +8,8 @@ We will Use two stages backup process as described [here](https://confluence.atl
 - This directory includes _Jira Indexes_: **/var/atlassian/jira/caches**
 # Resrote
 ### Set permissions for data directory
+
+# Restore
 `chmod -R 777 jira-data2`    
 
 ### Backup _Jira_ indexes
