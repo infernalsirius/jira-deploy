@@ -33,9 +33,16 @@ We will Use two stages backup process as described [here](https://confluence.atl
 `sudo docker cp /var/lib/docker/volumes/jira_data/_data/data jira_jira_1:/var/atlassian/jira/data`  
 
 ### 3. Backup _Postgres_ database
-`docker exec jira_postgresql_1  pg_dump --dbname=jira.sq.l://orid:turhsubr1974:5432/jiradb > postgres_backup1.sql`
+`docker exec jira_postgresql_1  pg_dump --dbname=jira.sq.l://orid:turhsubr1974:5432/jiradb > postgres_backup.sql`
 
 # Restore
+### _Postgres_ datadase restore
+Copy backup script to container:  
+`docker cp postgres_backup.sql jira_postgresql_1:/var/backups/postgres_backup.sql`  
+
+Run backup script inside the container:  
+`docker exec -it jira_postgresql_1 psql -U jira -d jiradb -f `  
+
 ### _Jira_ Reindex
 In order the changes to take effect you should reindex Jira, reindexing is done via the UI, instructions [here](https://confluence.atlassian.com/adminjiraserver073/search-indexing-861253852.html).  
 
