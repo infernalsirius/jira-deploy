@@ -4,8 +4,8 @@ We will Use two stages backup process as described [here](https://confluence.atl
 
 1. _Postgres_ backup with native database backup tool.
 2. _Jira's_ application data to backup (path inside the _Docker_ container):
-:- This directory includes **attachments** directory: **/var/atlassian/jira/data**
-:- This directory includes _Jira Indexes_: **/var/atlassian/jira/caches**
+    - This directory includes **attachments** directory: **/var/atlassian/jira/data**
+    - This directory includes _Jira Indexes_: **/var/atlassian/jira/caches**
 # Resrote
 ### Set permissions for data directory
 
