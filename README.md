@@ -41,7 +41,7 @@ Copy backup script to container:
 `docker cp postgres_backup.sql jira_postgresql_1:/var/backups/postgres_backup.sql`  
 
 Run backup script inside the container:  
-`docker exec -it jira_postgresql_1 psql -U jira -d jiradb -f `  
+`docker exec -it jira_postgresql_1 psql -U jira -d jiradb -f /var/backups/postgres_backup.sql`  
 
 ### _Jira_ Reindex
 In order the changes to take effect you should reindex Jira, reindexing is done via the UI, instructions [here](https://confluence.atlassian.com/adminjiraserver073/search-indexing-861253852.html).  
