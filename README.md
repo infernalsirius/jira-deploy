@@ -45,6 +45,5 @@ Run backup script inside the container:
 
 ### _Jira_ Reindex
 In order the changes to take effect you should reindex Jira, reindexing is done via the UI, instructions [here](https://confluence.atlassian.com/adminjiraserver073/search-indexing-861253852.html).  
-
-### From command line via REST API
+From command line via REST API:  
 `curl -D- -s -S -k -u orid:turhsubr1974 -X POST -H "Content-Type: application/json" "jira.sq.l/rest/api/2/reindex"`  
