@@ -9,10 +9,9 @@ We will Use two stages backup process as described [here](https://confluence.atl
 # Resrote
 ### Set permissions for data directory
 
-# Restore
 `chmod -R 777 jira-data2`    
 
-### Backup _Jira_ indexes
+### 1. Backup _Jira_ indexes
 `sudo rm -r jira-data2/caches`  
 `sudo cp -r /var/lib/docker/volumes/jira_data/_data/caches/ jira-data2/caches/`  
 `sudo chown -R orid:orid jira-data2/caches`  
@@ -23,7 +22,7 @@ We will Use two stages backup process as described [here](https://confluence.atl
 
 
 
-### Backup _Jira_ data
+### 2. Backup _Jira_ data
 `sudo rm -r  jira-data2/data/`  
 `sudo cp -r /var/lib/docker/volumes/jira_data/_data/data jira-data2/data/`    
 `sudo chown -R orid:orid jira-data2/data/`  
@@ -33,7 +32,11 @@ We will Use two stages backup process as described [here](https://confluence.atl
 `docker exec -it jira_jira_1 rm -r data`  
 `sudo docker cp /var/lib/docker/volumes/jira_data/_data/data jira_jira_1:/var/atlassian/jira/data`  
 
-# _Jira_ Reindex
+### 3. Backup _Postgres_ database
+`docker exec jira_postgresql_1  pg_dump --dbname=jira.sq.l://orid:turhsubr1974:5432/jiradb > postgres_backup1.sql`
+
+# Restore
+### _Jira_ Reindex
 In order the changes to take effect you should reindex Jira, reindexing is done via the UI, instructions [here](https://confluence.atlassian.com/adminjiraserver073/search-indexing-861253852.html).  
 
 ### From command line via REST API
