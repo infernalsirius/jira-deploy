@@ -16,7 +16,7 @@ We will Use two stages backup process as described [here](https://confluence.atl
 `sudo cp -r /var/lib/docker/volumes/jira_data/_data/caches/ jira-data2/caches/`  
 `sudo chown -R orid:orid jira-data2/caches`  
 
-### With _Docker_
+With _Docker_:  
 `docker exec -it jira_jira_1 rm -r caches`
 `sudo docker cp /var/lib/docker/volumes/jira_data/_data/caches/ jira_jira_1:/var/atlassian/jira/caches/`  
 
@@ -28,7 +28,7 @@ We will Use two stages backup process as described [here](https://confluence.atl
 `sudo chown -R orid:orid jira-data2/data/`  
 
 
-### With _Docker_
+With _Docker_:  
 `docker exec -it jira_jira_1 rm -r data`  
 `sudo docker cp /var/lib/docker/volumes/jira_data/_data/data jira_jira_1:/var/atlassian/jira/data`  
 
