@@ -1,6 +1,6 @@
 # Backup 
 Backup script inspired by [this](https://github.com/puppetlabs/jira-backup) GitHub project.
-We will Use two stages backup process as described [here](https://confluence.atlassian.com/adminjiraserver071/backing-up-data-802592964.html) (not [_Jira's XML Backup_](https://confluence.atlassian.com/adminjiraserver071/automating-jira-application-backups-802592966.html)).
+We will Use two stages backup process as described [here](https://confluence.atlassian.com/adminjiraserver071/backing-up-data-802592964.html) (not [_Jira's XML Backup_](https://confluence.atlassian.com/adminjiraserver071/automating-jira-application-backups-802592966.html)):
 
 1. _Postgres_ backup with native database backup tool.
 2. _Jira's_ application data to backup (path inside the _Docker_ container):
